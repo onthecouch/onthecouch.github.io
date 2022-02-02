@@ -1515,7 +1515,7 @@
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
     var logo = document.getElementById('logo');
-    var nightModeOption = ('on' || 'auto').toLowerCase();
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
     var storage = nightModeOption === 'manual'
         ? localStorage
         : sessionStorage;
