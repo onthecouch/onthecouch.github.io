@@ -1,12 +1,12 @@
 # Site settings
-title: SNAWF
-description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
+title: Coercionist Under a Blue Sky
+description: 'When two parties involved in its most ordinary cases' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/onthecouch.github.io" # the subpath of your site, e.g. /blog
 url: "https://onthecouch.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-logo: "/assets/img/branding/MVM-logo-full.svg"
-logo-icon: "/assets/img/branding/MVM-symbol.svg"
-logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
+logo: "/assets/img/branding/HD-logo-full.svg"
+logo-icon: "/assets/img/branding/HD-symbol.svg"
+logo-icon-SEO: "/assets/img/branding/HD-symbol-black.png" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -20,32 +20,32 @@ logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG f
 # the browser is closed or not)
 night_mode: "on"
 
-logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg"
+logo-dark: "/assets/img/branding/HD-logo-full-dark.svg"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 # Author settings
 author: Henry Dennis # add your name
 author-pic: Myself_Neon_grey.jpg
-about-author: Engineer, industry executive, research enthusiast. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 17+ years of experience working in multinational corporations.
+about-author: Adminstrator, Profesional Designer. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 6+ years of experience.
 
 # Contact links
 email: henrydns@msn.com # Add your Email address
 phone: # Add your Phone number
 website: https://onthecouch.github.io # Add your website
-linkedin: amaynez # Add your Linkedin handle
+linkedin: henrydns # Add your Linkedin handle
 github: ontecouch # Add your Github handle
 twitter: '@henrydns' # Add your Twitter handle
 #bandcamp: armandomaynez # Add your Bandcamp username
 
 # Newsletter
-mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
+# mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
 
 # Disqus
-discus_identifier: amaynez-github-io # Add your discus identifier
-comments_curtain: yes # leave empty to show the disqus embed directly
+# discus_identifier: amaynez-github-io # Add your discus identifier
+# comments_curtain: yes # leave empty to show the disqus embed directly
 
 # Tracker
-analytics: #
+analytics: UA-219241214-1 
 fbadmin: #
 
 # Paginate
