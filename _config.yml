@@ -35,14 +35,6 @@ website: https://onthecouch.github.io # Add your website
 linkedin: henrydns # Add your Linkedin handle
 github: ontecouch # Add your Github handle
 twitter: '@henrydns' # Add your Twitter handle
-#bandcamp: armandomaynez # Add your Bandcamp username
-
-# Newsletter
-# mailchimp: "https://github.us1.list-manage.com/subscribe/post?u=8ece198b3eb260e6838461a60&amp;id=397d90b5f4"
-
-# Disqus
-# discus_identifier: amaynez-github-io # Add your discus identifier
-# comments_curtain: yes # leave empty to show the disqus embed directly
 
 # Tracker
 analytics: UA-219241214-1 
