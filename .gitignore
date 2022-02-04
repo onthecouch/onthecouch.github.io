@@ -7,6 +7,7 @@
 /.idea/the-mvm.github.io.iml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
+.jekyll-cache/
 /.vscode/settings.json
 /.vscode/
 /.idea/
