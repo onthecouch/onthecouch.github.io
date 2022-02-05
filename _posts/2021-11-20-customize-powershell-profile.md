@@ -191,5 +191,5 @@ A PowerShell module to show file and folder icons in the terminal. [View on gith
 **PSReadLine**
 Replacing command line editing of Powershell. [View on github](https://github.com/PowerShell/PSReadLine) for the installation. Also almost missed it, install [NerdFont](https://www.nerdfonts.com/font-downloads) first before making change to your profile.
 
-![Final Look](./assets/img/posts/posh.png)
+![Final Look](./assets/img/posts/posh.jpg)
 <small>Final Look </small>
