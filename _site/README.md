@@ -1,5 +1,8 @@
-[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com) 
+<div align="center">
+  
+![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)
 
+</div>
 
 # PERSONAL WEBSITE 
 
@@ -13,9 +16,15 @@ You are free to copy this template and modified it. :running:
 
 Please make sure to run it locally first.
 
-## License
-[![GitHub license](https://img.shields.io/github/license/onthecouch/onthecouch.github.io?style=for-the-badge)](https://github.com/onthecouch/onthecouch.github.io/blob/main/LICENSE)
+<div align="center">
 
-[![forthebadge](https://forthebadge.com/images/badges/compatibility-pc-load-letter.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
-
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com) 
+[![GitHub license](https://img.shields.io/github/license/onthecouch/onthecouch.github.io?style=for-the-badge)](https://github.com/onthecouch/onthecouch.github.io/blob/main/LICENSE)  
+![forthebadge](https://forthebadge.com/images/badges/compatibility-pc-load-letter.svg)
+![forthebadge](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)
+![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)
+![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)
+  
+</div>
