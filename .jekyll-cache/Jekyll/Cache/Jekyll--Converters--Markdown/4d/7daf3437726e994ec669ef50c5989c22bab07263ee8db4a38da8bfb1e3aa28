@@ -1,136 +1,121 @@
----
-layout: post
-read_time: true
-show_date: true
-title:  Machine Learning Library in Python from scratch
-date:   2021-02-28 12:32:20 -0600
-description: Single neuron perceptron that classifies elements learning quite quickly.
-img: posts/MLLibrary.jpg 
-tags: [machine learning, coding, neural networks, python]
-author: Armando Maynez
-github: amaynez/GenericNeuralNetwork/
----
-It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.
-<center><img src="./assets/img/posts/ML_cloud.jpg" width="480px"></center>
-Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.
+I"�?<p>It must sound crazy that in this day and age, when we have such a myriad of amazing machine learning libraries and toolkits all open sourced, all quite well documented and easy to use, I decided to create my own ML library from scratch.</p>
+<center><img src="./assets/img/posts/ML_cloud.jpg" width="480px" /></center>
+<p>Let me try to explain; I am in the process of immersing myself into the world of Machine Learning, and to do so, I want to deeply understand the basic concepts and its foundations, and I think that there is no better way to do so than by creating myself all the code for a basic neural network library from scratch. This way I can gain in depth understanding of the math that underpins the ML algorithms.</p>
 
-Another benefit of doing this is that since I am also learning Python, the experiment brings along good exercise for me.
+<p>Another benefit of doing this is that since I am also learning Python, the experiment brings along good exercise for me.</p>
 
-To call it a Machine Learning Library is perhaps a bit of a stretch, since I just intended to create a **multi-neuron, multi-layered [perceptron](./single-neuron-perceptron.html)**.
+<p>To call it a Machine Learning Library is perhaps a bit of a stretch, since I just intended to create a <strong>multi-neuron, multi-layered <a href="./single-neuron-perceptron.html">perceptron</a></strong>.</p>
 
-<center><img src="./assets/img/posts/nnet_flow.gif"></center>
+<center><img src="./assets/img/posts/nnet_flow.gif" /></center>
 
-The library started very narrowly, with just the following functionality:
-- **create** a neural network based on the following parameters:
-    - number of inputs
-    - size and number of hidden layers
-    - number of outputs
-    - learning rate
-- **forward propagate** or predict the output values when given some inputs
-- **learn** through back propagation using gradient descent
+<p>The library started very narrowly, with just the following functionality:</p>
+<ul>
+  <li><strong>create</strong> a neural network based on the following parameters:
+    <ul>
+      <li>number of inputs</li>
+      <li>size and number of hidden layers</li>
+      <li>number of outputs</li>
+      <li>learning rate</li>
+    </ul>
+  </li>
+  <li><strong>forward propagate</strong> or predict the output values when given some inputs</li>
+  <li><strong>learn</strong> through back propagation using gradient descent</li>
+</ul>
 
-I restricted the model to be sequential, and the layers to be only dense / fully connected, this means that every neuron is connected to every neuron of the following layer. Also, as a restriction, the only activation function I implemented was sigmoid:
+<p>I restricted the model to be sequential, and the layers to be only dense / fully connected, this means that every neuron is connected to every neuron of the following layer. Also, as a restriction, the only activation function I implemented was sigmoid:</p>
 
-<center><img src="./assets/img/posts/nn_diagram.png"></center>
+<center><img src="./assets/img/posts/nn_diagram.png" /></center>
 
-With my neural network coded, I tested it with a very basic problem, the famous XOR problem.
+<p>With my neural network coded, I tested it with a very basic problem, the famous XOR problem.</p>
 
-XOR is a logical operation that cannot be solved by a single perceptron because of its linearity restriction:
+<p>XOR is a logical operation that cannot be solved by a single perceptron because of its linearity restriction:</p>
 
-<center><img src="./assets/img/posts/xor_problem.png"></center>
+<center><img src="./assets/img/posts/xor_problem.png" /></center>
 
-As you can see, when plotted in an X,Y plane, the logical operators AND and OR have a line that can clearly separate the points that are false from the ones that are true, hence a perceptron can easily learn to classify them; however, for XOR there is no single straight line that can do so, therefore a multilayer perceptron is needed for the task.
+<p>As you can see, when plotted in an X,Y plane, the logical operators AND and OR have a line that can clearly separate the points that are false from the ones that are true, hence a perceptron can easily learn to classify them; however, for XOR there is no single straight line that can do so, therefore a multilayer perceptron is needed for the task.</p>
 
-For the test I created a neural network with my library:
-```python
-import Neural_Network as nn
+<p>For the test I created a neural network with my library:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">Neural_Network</span> <span class="k">as</span> <span class="n">nn</span>
 
-inputs = 3
-hidden_layers = [2, 1]
-outputs = 1
-learning_rate = 0.03
+<span class="n">inputs</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">hidden_layers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.03</span>
 
-NN = nn.NeuralNetwork(inputs, hidden_layers, outputs, learning_rate)
-```
+<span class="n">NN</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">NeuralNetwork</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+</code></pre></div></div>
 
-The three inputs I decided to use (after a lot of trial and error) are the X and Y coordinate of a point (between X = 0, X = 1, Y = 0 and Y = 1) and as the third input the multiplication of both X and Y. Apparently it gives the network more information, and it ends up converging much more quickly with this third input.
+<p>The three inputs I decided to use (after a lot of trial and error) are the X and Y coordinate of a point (between X = 0, X = 1, Y = 0 and Y = 1) and as the third input the multiplication of both X and Y. Apparently it gives the network more information, and it ends up converging much more quickly with this third input.</p>
 
-Then there is a single hidden layer with 2 neurons and one output value, that will represent False if the value is closer to 0 or True if the value is closer to 1.
+<p>Then there is a single hidden layer with 2 neurons and one output value, that will represent False if the value is closer to 0 or True if the value is closer to 1.</p>
 
-Then I created the learning data, which is quite trivial for this problem, since we know very easily how to compute XOR.
+<p>Then I created the learning data, which is quite trivial for this problem, since we know very easily how to compute XOR.</p>
 
-```python
-training_data = []
-for n in range(learning_rounds):
-    x = rnd.random()
-    y = rnd.random()
-    training_data.append([x, y, x * y, 0 if (x < 0.5 and y < 0.5) or (x >= 0.5 and y >= 0.5) else 1])
-```
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">training_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">learning_rounds</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rnd</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rnd</span><span class="p">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">training_data</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
 
-And off we go into training:
-```python
-for data in training_data:
-    NN.train(data[:3].reshape(inputs), data[3:].reshape(outputs))
-```
+<p>And off we go into training:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">training_data</span><span class="p">:</span>
+    <span class="n">NN</span><span class="p">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">].</span><span class="n">reshape</span><span class="p">(</span><span class="n">inputs</span><span class="p">),</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">:].</span><span class="n">reshape</span><span class="p">(</span><span class="n">outputs</span><span class="p">))</span>
+</code></pre></div></div>
 
-The ML library can only train on batches of 1 (another self-imposed coding restriction), therefore only one "observation" at a time, this is why the train function accepts two parameters, one is the inputs packed in an array, and the other one is the outputs, packed as well in an array.
+<p>The ML library can only train on batches of 1 (another self-imposed coding restriction), therefore only one “observation” at a time, this is why the train function accepts two parameters, one is the inputs packed in an array, and the other one is the outputs, packed as well in an array.</p>
 
-To see the neural net in action I decided to plot the predicted results in both a 3d X,Y,Z surface plot (z being  the network's predicted value), and a scatter plot with the color of the points representing the predicted value.
+<p>To see the neural net in action I decided to plot the predicted results in both a 3d X,Y,Z surface plot (z being  the network’s predicted value), and a scatter plot with the color of the points representing the predicted value.</p>
 
-This was plotted in MatPlotLib, so we needed to do some housekeeping first:
+<p>This was plotted in MatPlotLib, so we needed to do some housekeeping first:</p>
 
-```python
-fig = plt.figure()
-fig.canvas.set_window_title('Learning XOR Algorithm')
-fig.set_size_inches(11, 6)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="n">set_window_title</span><span class="p">(</span><span class="s">'Learning XOR Algorithm'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 
-axs1 = fig.add_subplot(1, 2, 1, projection='3d')
-axs2 = fig.add_subplot(1, 2, 2)
-```
+<span class="n">axs1</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s">'3d'</span><span class="p">)</span>
+<span class="n">axs2</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
 
-Then we need to prepare the data to be plotted by generating X and Y values distributed between 0 and 1, and having the network calculate the Z value:
+<p>Then we need to prepare the data to be plotted by generating X and Y values distributed between 0 and 1, and having the network calculate the Z value:</p>
 
-```python
-x = np.linspace(0, 1, num_surface_points)
-y = np.linspace(0, 1, num_surface_points)
-x, y = np.meshgrid(x, y)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_surface_points</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_surface_points</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-z = np.array(NN.forward_propagation([x, y, x * y])).reshape(num_surface_points, num_surface_points)
-```
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">NN</span><span class="p">.</span><span class="n">forward_propagation</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">])).</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_surface_points</span><span class="p">,</span> <span class="n">num_surface_points</span><span class="p">)</span>
+</code></pre></div></div>
 
-As you can see, the z values array is reshaped as a 2d array of shape (x,y), since this is the way Matplotlib interprets it as a surface:
+<p>As you can see, the z values array is reshaped as a 2d array of shape (x,y), since this is the way Matplotlib interprets it as a surface:</p>
 
-```python
-axs1.plot_surface(x, y, z,
-                  rstride=1,
-                  cstride=1,
-                  cmap='viridis',
-                  vmin=0,
-                  vmax=1,
-                  antialiased=True)
-```
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">axs1</span><span class="p">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span>
+                  <span class="n">rstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">cstride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">cmap</span><span class="o">=</span><span class="s">'viridis'</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">antialiased</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
 
-The end result looks something like this:
-<center><img src="./assets/img/posts/Surface_XOR.jpg"></center>
+<p>The end result looks something like this:</p>
+<center><img src="./assets/img/posts/Surface_XOR.jpg" /></center>
 
+<p>Then we reshape the z array as a one dimensional array to use it to color the scatter plot:</p>
 
-Then we reshape the z array as a one dimensional array to use it to color the scatter plot:
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_surface_points</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">axs2</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
+                       <span class="n">marker</span><span class="o">=</span><span class="s">'o'</span><span class="p">,</span>
+                       <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+                       <span class="n">c</span><span class="o">=</span><span class="n">z</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+                       <span class="n">cmap</span><span class="o">=</span><span class="s">'viridis'</span><span class="p">,</span>
+                       <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                       <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<center><img src="./assets/img/posts/Final_XOR_Plot.jpg" /></center>
 
-```python
-z = z.reshape(num_surface_points ** 2)
-scatter = axs2.scatter(x, y,
-                       marker='o',
-                       s=40,
-                       c=z.astype(float),
-                       cmap='viridis',
-                       vmin=0,
-                       vmax=1)
-```
-<center><img src="./assets/img/posts/Final_XOR_Plot.jpg"></center>
+<p>To actually see the progress while learning, I created a Matplotlib animation, and it is quite interesting to see as it learns.</p>
 
-To actually see the progress while learning, I created a Matplotlib animation, and it is quite interesting to see as it learns.
-
-<center><video width="598" height="298" controls autoplay loop>
+<center><video width="598" height="298" controls="" autoplay="" loop="">
   <source type="video/mp4" src="data:video/mp4;base64,AAAAIGZ0eXBNNFYgAAACAE00ViBpc29taXNvMmF2YzEAAAAIZnJlZQAF5nJtZGF0AAACrgYF//+q
 3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2MSByMzA0OCBiODZhZTNjIC0gSC4yNjQvTVBF
 Ry00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAyMSAtIGh0dHA6Ly93d3cudmlkZW9sYW4u
@@ -6961,15 +6946,18 @@ B8gAAAh0AAADrQAABTsAAAikAAAM1AAABeQAAAmAAAADmgAACpgAAAvVAAAE2wAABG8AAAeKAAAE
 7wAABwYAAAXGAAAF7QAABdEAAAVUAAAIIgAABk0AAAAUc3RjbwAAAAAAAAABAAAAMAAAAGJ1ZHRh
 AAAAWm1ldGEAAAAAAAAAIWhkbHIAAAAAAAAAAG1kaXJhcHBsAAAAAAAAAAAAAAAALWlsc3QAAAAl
 qXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguNDUuMTAw
-">
-  <img src="./assets/img/posts/xor_animation.gif">
+" />
+  <img src="./assets/img/posts/xor_animation.gif" />
 </video></center>
 
-So my baby ML library is completed for now, but still I would like to enhance it in several ways:
+<p>So my baby ML library is completed for now, but still I would like to enhance it in several ways:</p>
 
-- include multiple activation functions (ReLu, linear, Tanh, etc.)
-- allow for multiple optimizers (Adam, RMSProp, SGD Momentum, etc.)
-- have batch and epoch training schedules functionality
-- save and load trained model to file
+<ul>
+  <li>include multiple activation functions (ReLu, linear, Tanh, etc.)</li>
+  <li>allow for multiple optimizers (Adam, RMSProp, SGD Momentum, etc.)</li>
+  <li>have batch and epoch training schedules functionality</li>
+  <li>save and load trained model to file</li>
+</ul>
 
-I will get to it soon...
+<p>I will get to it soon…</p>
+:ET
