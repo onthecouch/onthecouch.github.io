@@ -3,7 +3,7 @@ title: Coercionist Under a Blue Sky
 description: 'When two parties involved in its most ordinary cases' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/onthecouch.github.io" # the subpath of your site, e.g. /blog
-url: "https://onthecouch.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.snawf.my.id" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/HD-logo-full.svg"
 logo-icon: "/assets/img/branding/HD-symbol.svg"
 logo-icon-SEO: "/assets/img/branding/HD-symbol-black.png" # must be a non SVG file
@@ -18,7 +18,7 @@ logo-icon-SEO: "/assets/img/branding/HD-symbol-black.png" # must be a non SVG fi
 # visit (session). Only the dark mode setting is "manual",
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
-night_mode: "auto"
+night_mode: "on"
 
 logo-dark: "/assets/img/branding/HD-logo-full-dark.svg"
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
@@ -26,12 +26,12 @@ highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code h
 # Author settings
 author: Henry Dennis # add your name
 author-pic: dp.jpg
-about-author: Adminstrator, Profesional Designer. Avid learner with diverse interests in coding, machine learning, artificial intelligence and reinforcement learning. 6+ years of experience.
+about-author: Sys Admin, Profesional Designer. A personal static site for documented task what I have rarely done at work, might sometimes posting about my design. 6+ years of experience.
 
 # Contact links
 email: henrydns@msn.com # Add your Email address
 phone: # Add your Phone number
-website: https://onthecouch.github.io # Add your website
+website: https://www.snawf.my.id # Add your website
 linkedin: henrydns # Add your Linkedin handle
 github: ontecouch # Add your Github handle
 twitter: '@henrydns' # Add your Twitter handle
