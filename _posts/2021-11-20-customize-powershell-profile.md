@@ -2,7 +2,7 @@
 layout: post
 read_time: true
 show_date: true
-title: "Customizing Powershell Profile"
+title: "Customizing Powershell Profile."
 date: 2021-11-20
 img: posts/poshbanner.jpg
 tags: [powershell, microsoft, git, profile]

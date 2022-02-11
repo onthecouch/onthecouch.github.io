@@ -1,0 +1,56 @@
+I"�<h2 id="what-is-git">What is Git?</h2>
+<p>Back around 2009 when i was graduated from high school and i have nothing to do, I was tinkering with linux and some other stuff thats called open source. And that time I was discovered git and github.</p>
+
+<p>So, what it is? <a href="https://git-scm.com/">What is git?</a>, Taken from the website git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It outclasses every other SCM tools. Wait, what is SCM? SCM stand for Source Code Management. Well for some of you who are developer of some things either just do it for hobby, a school or uni project you really need management for the source code. To keep track for what you do before because no one get it rights for the first time. It is tool that keeps track of all changes, pushes and pulls code and a distributed repository which is used to store the code. With SCM you can have control, fast delivery, and availability to manage your own code you develop.</p>
+
+<p>The main difference is that CVS is (old) centralized version control system, while Git is distributed. Some of the features of git:</p>
+
+<ul>
+<li><strong>System Compatibility –</strong> Git can run on any type of operating system. Linux, Windows, Mac, even on Bsd. As git has no problem pulling and pushing code to and from distributed repositories other than GitHub.</li>
+<li><strong>Collaboration –</strong> It's allows for heavy collaboration. You can work together with your friends in project and you  can easily maintain a hierarchy and work on the same main code but on different snippets of features simultaneously and then merge all your work to form the software that is to be deployed. This allows for easy tracking of who is working on what part of the project and what changes they have made to that part.</li>
+<li><strong>Speed –</strong> Git is very efficient at handling code and allows the user for easy forking and cloning of major repositories onto local systems.</li>
+<li><strong>Security –</strong> It keeps a track of all the changes and commits that were made as logs.</li></ul>
+
+<h2 id="how-git-works">How Git works</h2>
+
+<p>You wrote your code on your local system and that code will then be pushed to a remote distributed repository on the internet. While Git, breakdown it in these code step.</p>
+
+<h2 id="git-step">Git step.</h2>
+<h3 id="step-1---working-directory">Step 1 - working directory</h3>
+
+<p>This the location where all of the working code will be stored, and this is where the user will be working from.</p>
+
+<h3 id="step-2---intializing">Step 2 - intializing</h3>
+
+<p>This is when you wants to initialize your working directory. Initializing the directory tells git that this directory as a repository which can be later pushed onto the distributed cloud when needed. This is when all git starts tracking all the files in the directory. by using command prompt or terminal of your choice, you can established the command using;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+</code></pre></div></div>
+
+<h3 id="step-3---staging">Step 3 - staging</h3>
+
+<p>Staging code basically tells git where all the changes to the code are made and what kind of changes these are. i.e. additions &amp; deletions are made. Then the code is <strong><em>staged</em></strong>*. It can be done after you add your work into the folder by using git command;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add *yourfilename
+</code></pre></div></div>
+
+<h3 id="step-4---commiting">Step 4 - commiting</h3>
+
+<p>All the changes made to the files to a local repository, saved onto the local system. For easy reference, each commit has a unique ID.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit *yourfilename -m "first commit"
+</code></pre></div></div>
+
+<h3 id="step-5---pushing">Step 5 - Pushing</h3>
+
+<p>When the code is pushed from the local storage to the cloud/distributed repository. With git it’s GitHub where the code is stored. Then the code can then be pulled later to make new changes and then pushed again repeating the life-cycle. Which can be done by using;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push 
+</code></pre></div></div>
+
+<p><a name="Model6"></a></p>
+<h3 id="model-6---tensorflow--keras">Model 6 - Tensorflow / Keras</h3>
+
+<p><a name="Model7"></a></p>
+<h3 id="model-7---changing-the-training-schedule">Model 7 - changing the training schedule</h3>
+:ET

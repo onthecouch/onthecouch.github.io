@@ -1,0 +1,122 @@
+I""<h2 id="what-is-git">What is Git?</h2>
+<p>Back around 2009 when i was graduated from high school and i have nothing to do, I was tinkering with linux and some other stuff thats called open source. And that time I was discovered git and github.</p>
+
+<p>So, what it is? <a href="https://git-scm.com/">What is git?</a>, Taken from the website git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It outclasses every other SCM tools. Wait, what is SCM? SCM stand for Source Code Management. Well for some of you who are developer of some things either just do it for hobby, a school or uni project you really need management for the source code. To keep track for what you do before because no one get it rights for the first time. It is tool that keeps track of all changes, pushes and pulls code and a distributed repository which is used to store the code. With SCM you can have control, fast delivery, and availability to manage your own code you develop.</p>
+
+<p>The main difference is that CVS is (old) centralized version control system, while Git is distributed. Some of the features of git:</p>
+
+<ul><li><strong>System Compatibility –</strong> Git can run on any type of operating system. Linux, Windows, Mac, even on Bsd. As git has no problem pulling and pushing code to and from distributed repositories other than GitHub.</li><li><strong>Collaboration –</strong> It's allows for heavy collaboration. You can work together with your friends in project and you  can easily maintain a hierarchy and work on the same main code but on different snippets of features simultaneously and then merge all your work to form the software that is to be deployed. This allows for easy tracking of who is working on what part of the project and what changes they have made to that part.</li><li><strong>Speed –</strong> Git is very efficient at handling code and allows the user for easy forking and cloning of major repositories onto local systems.<li><strong>Security –</strong> It keeps a track of all the changes and commits that were made as logs.</li>
+
+
+## How Git works
+You wrote your code on your local system and that code will then be pushed to a remote distributed repository on the internet. While Git, breakdown it in these code step.
+
+
+## The step.
+### Step 1 - working directory
+
+This the location where all of the working code will be stored, and this is where the user will be working from.
+
+
+### Step 2 - intializing
+
+This is when you wants to initialize your working directory. Initializing the directory tells git that this directory as a repository which can be later pushed onto the distributed cloud when needed. This is when all git starts tracking all the files in the directory. by using command prompt or terminal of your choice, you can established the command using;
+
+
+```git
+$ git init
+```
+
+
+<a name="Step3"></a>
+### Step 3 - staging
+
+Staging code basically tells git where all the changes to the code are made and what kind of changes these are. i.e. additions &amp; deletions are made. Then the code is ***staged****.
+
+
+<a name="Step4"></a>
+### Step 4 - commiting
+
+All the changes made to the files to a local repository, saved onto the local system. For easy reference, each commit has a unique ID.
+
+
+<a name="Step5"></a>
+### Step 5 - Pushing
+
+When the code is pushed from the local storage to the cloud/distributed repository. With git it’s GitHub where the code is stored. Then the code can then be pulled later to make new changes and then pushed again repeating the life-cycle.
+
+<a name="Model6"></a>
+### Model 6 - Tensorflow / Keras
+<center><img src="https://www.kubeflow.org/docs/images/logos/TensorFlow.png" width="100" height="100" /></center>
+
+```python
+self.PolicyNetwork = Sequential()
+for layer in hidden_layers:
+    self.PolicyNetwork.add(Dense(
+                           units=layer,
+                           activation='relu',
+                           input_dim=inputs,
+                           kernel_initializer='random_uniform',
+                           bias_initializer='zeros'))
+self.PolicyNetwork.add(Dense(
+                        outputs,
+                        kernel_initializer='random_uniform',
+                        bias_initializer='zeros'))
+opt = Adam(learning_rate=c.LEARNING_RATE,
+           beta_1=c.GAMMA_OPT,
+           beta_2=c.BETA,
+           epsilon=c.EPSILON,
+           amsgrad=False)
+self.PolicyNetwork.compile(optimizer='adam',
+                           loss='mean_squared_error',
+                           metrics=['accuracy'])
+```
+As you can see I am reusing all of my old code, and just replacing my Neural Net library with Tensorflow/Keras, keeping even my hyper-parameter constants.
+
+The training function changed to:
+```python
+reduce_lr_on_plateau = ReduceLROnPlateau(monitor='loss',
+                                         factor=0.1,
+                                         patience=25)
+history = self.PolicyNetwork.fit(np.asarray(states_to_train),
+                                 np.asarray(targets_to_train),
+                                 epochs=c.EPOCHS,
+                                 batch_size=c.BATCH_SIZE,
+                                 verbose=1,
+                                 callbacks=[reduce_lr_on_plateau],
+                                 shuffle=True)
+```
+
+With Tensorflow implemented, the first thing I noticed, was that I had an error in the calculation of the loss, although this only affected reporting and didn't change a thing on the training of the network, so the results kept being the same, **the loss function was still stagnating! My code was not the issue.**
+<a name="Model7"></a>
+### Model 7 - changing the training schedule
+Next I tried to change the way the network was training as per [u/elBarto015](https://www.reddit.com/user/elBarto015) [advised me on reddit](https://www.reddit.com/r/reinforcementlearning/comments/lzzjar/i_created_an_ai_for_super_hexagon_based_on/gqc8ka6?utm_source=share&amp;utm_medium=web2x&amp;context=3).
+
+The way I was training initially was:
+- Games begin being simulated and the outcome recorded in the replay memory
+- Once a sufficient ammount of experiences are recorded (at least equal to the batch size) the Network will train with a random sample of experiences from the replay memory. The ammount of experiences to sample is the batch size.
+- The games continue to be played between the random player and the network.
+- Every move from either player generates a new training round, again with a random sample from the replay memory.
+- This continues until the number of games set up conclude.
+
+<center><img src="./assets/img/posts/ReplayMemoryBefore.png" width="540" /></center>
+
+The first change was to train only after every game concludes with the same ammount of data (a batch). This was still not giving any good results.
+
+The second change was more drastic, it introduced the concept of epochs for every training round, it basically sampled the replay memory for epochs * batch size experiences, for instance if epochs selected were 10, and batch size was 81, then 810 experiences were sampled out of the replay memory. With this sample the network was then trained for 10 epochs randomly using the batch size.
+
+This meant that I was training now effectively 10 (or the number of epochs selected) times more per game, but in batches of the same size and randomly shuffling the experiences each epoch.
+
+<center><img src="./assets/img/posts/ReplayMemoryAfter.png" width="540" /></center><br />
+
+After still playing around with some hyperparameters I managed to get similar performance as I got before, reaching 83.15% win rate vs. the random player, so I decided to keep training in rounds of 2,000 games each to evaluate performance. With almost every round I could see improvement:
+
+<center><img src="./assets/img/posts/Model7HyperParameters.png" width="540" /><br />
+<img src="./assets/img/posts/Model7.png" width="480" />
+</center><br />
+
+As of today, my best result so far is 87.5%, I will leave it rest for a while and keep investigating to find a reason for not being able to reach at least 90%. I read about [self play](https://medium.com/applied-data-science/how-to-train-ai-agents-to-play-multiplayer-games-using-self-play-deep-reinforcement-learning-247d0b440717), and it looks like a viable option to test and a fun coding challenge. However, before embarking in yet another big change I want to ensure I have been thorough with the model and have tested every option correctly.
+
+I feel the end is near... should I continue to update this post as new events unfold or shall I make it a multi post thread?
+</li></ul>
+:ET

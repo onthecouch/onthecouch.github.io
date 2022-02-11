@@ -6,7 +6,9 @@
   "tag" : "git",
   "posts" : [
       
-      "./customize-powershell-profile.html"
+      "./customize-powershell-profile.html",
+      
+      "./what-is-git.html"
       
     ]
   } ,
@@ -16,7 +18,9 @@
   "tag" : "microsoft",
   "posts" : [
       
-      "./customize-powershell-profile.html"
+      "./customize-powershell-profile.html",
+      
+      "./what-is-git.html"
       
     ]
   } ,
@@ -26,7 +30,9 @@
   "tag" : "powershell",
   "posts" : [
       
-      "./customize-powershell-profile.html"
+      "./customize-powershell-profile.html",
+      
+      "./what-is-git.html"
       
     ]
   } ,

@@ -1,7 +1,9 @@
 {
   "posts" : [
     
-    "./customize-powershell-profile.html"
+    "./customize-powershell-profile.html",
+    
+    "./what-is-git.html"
     
   ]
 }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/onthecouch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/onthecouch.github.io/" rel="alternate" type="text/html" /><updated>2022-02-05T22:30:26+07:00</updated><id>http://localhost:4000/onthecouch.github.io/feed.xml</id><title type="html">Coercionist Under a Blue Sky</title><subtitle>When two parties involved in its most ordinary cases</subtitle><author><name>Henry Dennis</name></author><entry><title type="html">Customizing Powershell Profile</title><link href="http://localhost:4000/onthecouch.github.io/customize-powershell-profile.html" rel="alternate" type="text/html" title="Customizing Powershell Profile" /><published>2021-11-20T00:00:00+07:00</published><updated>2021-11-20T00:00:00+07:00</updated><id>http://localhost:4000/onthecouch.github.io/customize-powershell-profile</id><content type="html" xml:base="http://localhost:4000/onthecouch.github.io/customize-powershell-profile.html"><![CDATA[<p>In this post, I will show you how to create a PowerShell profile and configure how PowerShell start. <a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">What is PowerShell?</a> Read that from the MSDN. I’m not gonna post about what is PowerShell? or something like the history of powershell to make this post looks like a wall of text, while you can read that on official microsoft documentation or just google it.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/onthecouch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/onthecouch.github.io/" rel="alternate" type="text/html" /><updated>2022-02-11T23:07:13+07:00</updated><id>http://localhost:4000/onthecouch.github.io/feed.xml</id><title type="html">Coercionist Under a Blue Sky</title><subtitle>When two parties involved in its most ordinary cases</subtitle><author><name>Henry Dennis</name></author><entry><title type="html">Customizing Powershell Profile.</title><link href="http://localhost:4000/onthecouch.github.io/customize-powershell-profile.html" rel="alternate" type="text/html" title="Customizing Powershell Profile." /><published>2021-11-20T00:00:00+07:00</published><updated>2021-11-20T00:00:00+07:00</updated><id>http://localhost:4000/onthecouch.github.io/customize-powershell-profile</id><content type="html" xml:base="http://localhost:4000/onthecouch.github.io/customize-powershell-profile.html"><![CDATA[<p>In this post, I will show you how to create a PowerShell profile and configure how PowerShell start. <a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">What is PowerShell?</a> Read that from the MSDN. I’m not gonna post about what is PowerShell? or something like the history of powershell to make this post looks like a wall of text, while you can read that on official microsoft documentation or just google it.</p>
 
 <p>With the PowerShell profile you can create:</p>
 <ul>
@@ -177,4 +177,90 @@ A PowerShell module to show file and folder icons in the terminal. <a href="http
 Replacing command line editing of Powershell. <a href="https://github.com/PowerShell/PSReadLine">View on github</a> for the installation. Also almost missed it, install <a href="https://www.nerdfonts.com/font-downloads">NerdFont</a> first before making change to your profile.</p>
 
 <p><img src="./assets/img/posts/posh.jpg" alt="Final Look" />
-<small>Final Look </small></p>]]></content><author><name>Henry Dennis</name></author><category term="powershell" /><category term="powershell" /><category term="microsoft" /><category term="git" /><category term="profile" /><summary type="html"><![CDATA[Microsoft PowerShell is a command-line shell and scripting language designed especially for system administration.]]></summary></entry></feed>
+<small>Final Look </small></p>]]></content><author><name>Henry Dennis</name></author><category term="powershell" /><category term="powershell" /><category term="microsoft" /><category term="git" /><category term="profile" /><summary type="html"><![CDATA[Microsoft PowerShell is a command-line shell and scripting language designed especially for system administration.]]></summary></entry><entry><title type="html">What is git? and how to use it. Not really a complete guide.</title><link href="http://localhost:4000/onthecouch.github.io/what-is-git.html" rel="alternate" type="text/html" title="What is git? and how to use it. Not really a complete guide." /><published>2020-03-19T05:14:20+07:00</published><updated>2020-03-19T05:14:20+07:00</updated><id>http://localhost:4000/onthecouch.github.io/what-is-git</id><content type="html" xml:base="http://localhost:4000/onthecouch.github.io/what-is-git.html"><![CDATA[<h2 id="what-is-git">What is Git?</h2>
+<p>Back around 2009 when i was graduated from high school and i have nothing to do, I was tinkering with linux and some other stuff thats called open source. And that time I was discovered git and github.</p>
+
+<p>So, what it is? <a href="https://git-scm.com/">What is git?</a>, Taken from the website git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It outclasses every other SCM tools.</p>
+
+<p>Wait, what is SCM? SCM stand for Source Code Management. Well for some of you who are developer of some things either just do it for hobby, a school or uni project you really need management for the source code. To keep track for what you do before because no one get it rights for the first time. It is tool that keeps track of all changes, pushes and pulls code and a distributed repository which is used to store the code.</p>
+
+<p>With SCM you can have control, fast delivery, and availability to manage your own code you develop.</p>
+
+<p>The main difference is that CVS is (old) centralized version control system, while Git is distributed. Some of the features of git:</p>
+
+<ul>
+<li><strong>System Compatibility –</strong> Git can run on any type of operating system. Linux, Windows, Mac, even on Bsd. As git has no problem pulling and pushing code to and from distributed repositories other than GitHub.</li>
+<li><strong>Collaboration –</strong> It's allows for heavy collaboration. You can work together with your friends in project and you  can easily maintain a hierarchy and work on the same main code but on different snippets of features simultaneously and then merge all your work to form the software that is to be deployed. This allows for easy tracking of who is working on what part of the project and what changes they have made to that part.</li>
+<li><strong>Speed –</strong> Git is very efficient at handling code and allows the user for easy forking and cloning of major repositories onto local systems.</li>
+<li><strong>Security –</strong> It keeps a track of all the changes and commits that were made as logs.</li></ul>
+
+<h2 id="how-git-works">How Git works</h2>
+
+<p>You wrote your code on your local system and that code will then be pushed to a remote distributed repository on the internet. While Git, breakdown it in these code step.</p>
+
+<h2 id="git-step">Git step.</h2>
+<h3 id="step-1---working-directory">Step 1 - working directory</h3>
+
+<p>This the location where all of the working code will be stored, and this is where the user will be working from.</p>
+
+<h3 id="step-2---intializing">Step 2 - intializing</h3>
+
+<p>This is when you wants to initialize your working directory. Initializing the directory tells git that this directory as a repository which can be later pushed onto the distributed cloud when needed. This is when all git starts tracking all the files in the directory. by using command prompt or terminal of your choice, you can established the command using;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+</code></pre></div></div>
+
+<h3 id="step-3---staging">Step 3 - staging</h3>
+
+<p>Staging code basically tells git where all the changes to the code are made and what kind of changes these are. i.e. additions &amp; deletions are made. Then the code is <strong>staged</strong>. It can be done after you add your work into the folder by using git command;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add *yourfilename
+</code></pre></div></div>
+
+<h3 id="step-4---commiting">Step 4 - commiting</h3>
+
+<p>All the changes made to the files to a local repository, saved onto the local system. For easy reference, each commit has a unique ID.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit *yourfilename -m "first commit"
+</code></pre></div></div>
+
+<h3 id="step-5---pushing">Step 5 - Pushing</h3>
+
+<p>When the code is pushed from the local storage to the cloud/distributed repository. With git it’s GitHub where the code is stored. Then the code can then be pulled later to make new changes and then pushed again repeating the life-cycle. Which can be done by using;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push 
+</code></pre></div></div>
+
+<h2 id="setting-up-git-on-windows-10-via-terminal">Setting up git on windows 10 via terminal</h2>
+
+<p><a name="Step1"></a></p>
+<h3 id="step-1---download">Step 1 - Download</h3>
+
+<p>Download latest version of git from the <a href="https://git-scm.com/">website</a> install it as usual you do the installation. For the path choices choose <strong>Use Git from the Windows Command Prompt.</strong></p>
+
+<p><a name="Step2"></a></p>
+<h3 id="step-2---check-the-version-of-git">Step 2 - Check the version of git</h3>
+
+<p>Open up your terminal or powershell or cmd whatever then type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git --version 
+</code></pre></div></div>
+<p>It will show the current version you used on your windows machine.</p>
+
+<p><a name="Step3"></a></p>
+<h3 id="step-3---configuration">Step 3 - Configuration</h3>
+
+<p>if you already have your account on gihub then you need to add your account to the configuration by using these commands</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name &lt;yourusername&gt;
+$ git config --global user.email &lt;youremail&gt;
+</code></pre></div></div>
+
+<p>then check the configuration by using</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+</code></pre></div></div>
+
+<p>Congrats, you finally set up your git on your windows machine, for more git command and how to use it you can always google it. There’s plenty of source on how to maximize you using git and github. As for this writing for my personal notes only.</p>
+
+<p>Cya!</p>]]></content><author><name>Henry Dennis</name></author><category term="git" /><category term="microsoft" /><category term="powershell" /><summary type="html"><![CDATA[What is git?]]></summary></entry></feed>
