@@ -1,3 +1,11 @@
+# Archive Notice
+
+This repository contains the archived source code for a personal website and blog. It was previously used as the main static site but is no longer maintained. This code remains available for public reference.
+
+For the current website, please visit [snawf.my.id](https://snawf.my.id).
+
+---
+
 <div align="center">
   
 ![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)
